@@ -1,18 +1,24 @@
 return {
-  { 'echasnovski/mini.ai', version = false, config = true },
-  {
-    'echasnovski/mini.surround',
-    opts = {
-      mappings = {
-        add = 'gsa',            -- Add surrounding in Normal and Visual modes
-        delete = 'gsd',         -- Delete surrounding
-        find = 'gsf',           -- Find surrounding (to the right)
-        find_left = 'gsF',      -- Find surrounding (to the left)
-        highlight = 'gsh',      -- Highlight surrounding
-        replace = 'gsr',        -- Replace surrounding
-        update_n_lines = 'gsn', -- Update `n_lines`
-      },
-    },
-    config = true,
-  },
+	{ "echasnovski/mini.ai", version = false, config = true },
+	-- {
+	-- 	"echasnovski/mini.icons",
+	-- 	lazy = true,
+	-- 	opts = {
+	-- 		file = {
+	-- 			[".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
+	-- 			["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
+	-- 			[".go-version"] = { glyph = "", hl = "MiniIconsBlue" },
+	-- 		},
+	-- 		filetype = {
+	-- 			dotenv = { glyph = "", hl = "MiniIconsYellow" },
+	-- 			gotmpl = { glyph = "󰟓", hl = "MiniIconsGrey" },
+	-- 		},
+	-- 	},
+	-- 	init = function()
+	-- 		package.preload["nvim-web-devicons"] = function()
+	-- 			require("mini.icons").mock_nvim_web_devicons()
+	-- 			return package.loaded["nvim-web-devicons"]
+	-- 		end
+	-- 	end,
+	-- },
 }

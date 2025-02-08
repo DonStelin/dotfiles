@@ -5,14 +5,7 @@ return {
 	---@type snacks.Config
 	keys = {
 		{
-			"<leader>sm",
-			function()
-				Snacks.picker.smart()
-			end,
-			desc = "Smart Find Files",
-		},
-		{
-			"<leader><leader>",
+			"<leader>sb",
 			function()
 				Snacks.picker.buffers({
 					on_show = function()
@@ -56,21 +49,6 @@ return {
 				Snacks.picker.notifications()
 			end,
 			desc = "Notification History",
-		},
-		{
-			"<leader>e",
-			function()
-				Snacks.explorer()
-			end,
-			desc = "File Explorer",
-		},
-		-- find
-		{
-			"<leader>fb",
-			function()
-				Snacks.picker.buffers()
-			end,
-			desc = "Buffers",
 		},
 		{
 			"<leader>fc",
@@ -148,28 +126,14 @@ return {
 		},
 		-- Grep
 		{
-			"<leader>sb",
+			"<leader>/",
 			function()
 				Snacks.picker.lines()
 			end,
 			desc = "Buffer Lines",
 		},
 		{
-			"<leader>sB",
-			function()
-				Snacks.picker.grep_buffers()
-			end,
-			desc = "Grep Open Buffers",
-		},
-		{
-			"<leader>sg",
-			function()
-				Snacks.picker.grep()
-			end,
-			desc = "Grep",
-		},
-		{
-			"<leader>sw",
+			"<leader>gw",
 			function()
 				Snacks.picker.grep_word()
 			end,
@@ -197,13 +161,6 @@ return {
 				Snacks.picker.autocmds()
 			end,
 			desc = "Autocmds",
-		},
-		{
-			"<leader>sb",
-			function()
-				Snacks.picker.lines()
-			end,
-			desc = "Buffer Lines",
 		},
 		{
 			"<leader>sc",
@@ -398,6 +355,26 @@ return {
 			desc = "Git Browse",
 			mode = { "n", "v" },
 		},
+		{
+			"<leader>.",
+			function()
+				Snacks.scratch()
+			end,
+			desc = "Toggle Scratch Buffer",
+		},
+		{
+			"<leader>S",
+			function()
+				Snacks.scratch.select()
+			end,
+			desc = "Select Scratch Buffer",
+		},
+		{
+			"<leader>th",
+			function()
+				Snacks.toggle.inlay_hints()
+			end,
+		},
 	},
 	opts = {
 		bigfile = {
@@ -414,13 +391,10 @@ return {
 		notifier = { enabled = true },
 		notify = { enabled = true },
 		quickfile = { enabled = true },
+
 		scroll = { enabled = false },
 		---@type snacks.Config
-		statuscolumn = {
-			-- your statuscolumn configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
+		statuscolumn = {},
 		words = { enabled = true },
 	},
 }

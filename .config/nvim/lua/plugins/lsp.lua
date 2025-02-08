@@ -20,27 +20,87 @@ return {
 		lazy = false,
 		opts = {
 			auto_install = true,
-			inlay_hints = {
-				enabled = true,
-			},
+			-- inlay_hints = {
+			-- 	enabled = true,
+			-- },
 		},
 	},
 
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = { "saghen/blink.cmp" },
-
 		opts = {
 			servers = {
-				lua_ls = {},
+				lua_ls = {
+					settings = {
+						Lua = {
+							workspace = {
+								checkThirdParty = false,
+							},
+							codeLens = {
+								enable = true,
+							},
+							completion = {
+								callSnippet = "Replace",
+							},
+							doc = {
+								privateName = { "^_" },
+							},
+							hint = {
+								enable = true,
+								setType = false,
+								paramType = true,
+								paramName = "Disable",
+								semicolon = "Disable",
+								arrayIndex = "Disable",
+							},
+						},
+					},
+				},
 				clangd = {
 					cmd = {
 						"clangd",
 						"--offset-encoding=utf-16",
 					},
 				},
-				gopls = {},
-				ts_ls = {},
+				gopls = {
+					settings = {
+						gopls = {
+							gofumpt = true,
+							codelenses = {
+								gc_details = false,
+								generate = true,
+								regenerate_cgo = true,
+								run_govulncheck = true,
+								test = true,
+								tidy = true,
+								upgrade_dependency = true,
+								vendor = true,
+							},
+							-- hints = {
+							-- 	assignVariableTypes = true,
+							-- 	compositeLiteralFields = true,
+							-- 	compositeLiteralTypes = true,
+							-- 	constantValues = true,
+							-- 	functionTypeParameters = true,
+							-- 	parameterNames = true,
+							-- 	rangeVariableTypes = true,
+							-- },
+							analyses = {
+								nilness = true,
+								unusedparams = true,
+								unusedwrite = true,
+								useany = true,
+							},
+							usePlaceholders = true,
+							completeUnimported = true,
+							staticcheck = true,
+							directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+							semanticTokens = true,
+						},
+					},
+				},
+				-- ts_ls = {},
 				html = {},
 				rust_analyzer = {},
 				tailwindcss = {},
@@ -83,9 +143,9 @@ return {
 					-- 	require("telescope.builtin").lsp_dynamic_workspace_symbols,
 					-- 	"[W]orkspace [S]ymbols"
 					-- )
-					-- map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-					-- map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
-					-- map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
+					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 

@@ -8,7 +8,7 @@ return { -- Autoformat
 		},
 		formatters_by_ft = {
 			lua = { "stylua" },
-			go = { "goimports", "gofmt" },
+			go = { "goimports", "gofumpt" },
 			rust = { "rustfmt" },
 			typescript = { "prettier" },
 			typescriptreact = { "prettier" },
