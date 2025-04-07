@@ -101,10 +101,16 @@ return {
 					},
 				},
 				-- ts_ls = {},
+				markdown_oxide = {},
 				html = {},
 				rust_analyzer = {},
 				tailwindcss = {},
 				bashls = {},
+				tinymist = {
+					settings = {
+						formatterMode = "typstyle",
+					},
+				},
 				volar = {
 					init_options = {
 						vue = {

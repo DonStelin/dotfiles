@@ -55,4 +55,4 @@ vim.api.nvim_set_keymap(
 )
 
 -- quit neovim qa! with qq
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+map("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Quit All" })
