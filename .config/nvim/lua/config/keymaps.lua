@@ -40,19 +40,11 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Save buffer
 vim.api.nvim_set_keymap("n", "<leader>ww", ":lua SaveBuffer()<CR>", { noremap = true, silent = true })
 function SaveBuffer()
-	if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
-		vim.cmd("silent update")
-	end
+  if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
+    vim.cmd("silent update")
+  end
 end
 
 -- oil.nvim
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>oi",
-	"<cmd>lua require('oil').open_float()<CR>",
-	{ noremap = true, silent = true }
-)
-
 -- quit neovim qa! with qq
 map("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Quit All" })

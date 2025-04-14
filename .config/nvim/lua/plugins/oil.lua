@@ -35,6 +35,15 @@ return {
           show_hidden = true,
         },
       }
+
+
+      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+      vim.api.nvim_set_keymap(
+        "n",
+        "<leader>oi",
+        "<cmd>lua require('oil').open_float()<CR>",
+        { noremap = true, silent = true }
+      )
     end,
   },
 }
