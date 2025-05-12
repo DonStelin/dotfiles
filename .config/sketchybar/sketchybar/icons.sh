@@ -2,9 +2,6 @@
 
 # General Icons
 LOADING=􀖇
-CAT=󰄛
-
-cal=􀖇
 APPLE=􀣺
 PREFERENCES=􀺽
 ACTIVITY=􀒓

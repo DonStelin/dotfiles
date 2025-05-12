@@ -1,7 +1,5 @@
-local go = require("snippets.go")
-local typescript = require("snippets.typescript")
+local go_snippets = require("LuaSnip.go")
 
 return {
-  go = go,
-  typescript = typescript,
+	go = go_snippets,
 }

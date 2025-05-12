@@ -112,8 +112,9 @@ alias gdiff="git diff"
 alias undo="git reset --soft HEAD"
 
 alias zshconfig="nvim ~/.zshrc"
-alias wth="curl wttr.in"
+alias with="curl wttr.in"
 alias cat=bat
+alias start='tmux new-session -s "󰄛" -c "$PWD"'
 
 
 #dotfiles
@@ -130,10 +131,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-
+export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:/Users/stelinlarios/.spicetify
+export GOLANGCI_LINT_CONFIG="$HOME/.config/golangci/config.yml"
