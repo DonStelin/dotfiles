@@ -171,6 +171,40 @@ func <name>(<args>) <r> {
 		),
 		{ description = "Define a Go function signature" }
 	),
+	s(
+		"tf",
+		fmta(
+			[[
+func Test<name>(t *testing.T) {
+    <finish>
+}
+]],
+			{
+				name = i(1, "FunctionName"),
+				finish = i(0),
+			}
+		),
+		{ description = "Define a Go test function" }
+	),
+	s(
+		"sm",
+		fmta(
+			[[
+func (<receiver> <type>) <name>(<args>) <r> {
+    <finish>
+}
+]],
+			{
+				receiver = i(1, "s"),
+				type = i(2, "StructName"),
+				name = i(3, "MethodName"),
+				args = i(4),
+				r = i(5),
+				finish = i(0),
+			}
+		),
+		{ description = "Define a Go struct method" }
+	),
 }
 
 return snippets
