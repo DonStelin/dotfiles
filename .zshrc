@@ -136,3 +136,33 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:/Users/stelinlarios/.spicetify
 export GOLANGCI_LINT_CONFIG="$HOME/.config/golangci/config.yml"
+
+
+# Función para buscar archivos/directorios con fzf y navegar
+fzf_find_file() {
+    local selected_path
+    # Modificación aquí: pasar la lista de archivos a fzf
+    selected_path=$(find . -maxdepth 5 -type f -o -type d 2>/dev/null | fzf \
+                        --preview '[[ -d {} ]] && ls -F {} || bat --color=always --line-range :500 {}' \
+                        --bind 'ctrl-o:execute(nvim {})' \
+                        --bind 'ctrl-x:execute(xdg-open {})' \
+                        --header "Buscar (Enter para navegar/insertar, Ctrl+O para nvim, Ctrl+X para abrir)")
+    
+    if [[ -n "$selected_path" ]]; then
+        if [[ -d "$selected_path" ]]; then
+            # Si es un directorio, navegar a él
+            zle reset-prompt # Limpiar la línea de commandos actual
+            builtin cd "$selected_path"
+        else
+            # Si es un archivo, insertarlo en la línea de commandos
+            LBUFFER+="$selected_path"
+        fi
+    fi
+    zle redisplay
+}
+
+# Asegúrate de que esta línea esté presente y después de la definición de la función
+zle -N fzf_find_file
+bindkey '^F' fzf_find_file
+
+eval "$(tv init zsh)"
