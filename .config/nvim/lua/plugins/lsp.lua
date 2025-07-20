@@ -68,6 +68,7 @@ return {
 						"--offset-encoding=utf-16",
 					},
 				},
+				sqlls = {},
 				-- gopls = {
 				-- 	settings = {
 				-- 		gopls = {

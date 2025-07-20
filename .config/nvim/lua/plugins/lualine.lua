@@ -1,6 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons", "bwpge/lualine-pretty-path" },
+	enabled = false,
+
 	event = "VeryLazy",
 	config = function()
 		-- Custom Lualine component to show attached language server

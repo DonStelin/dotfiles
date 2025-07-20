@@ -49,6 +49,10 @@ end
 -- quit neovim qa! with qq
 map("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Quit All" })
 
+-- Go keymaps go brr
+map("n", "<leader>gtr", "<cmd>GoTestFunc<cr>", { desc = "Go Test Run" })
+map("n", "<leader>gtc", "<cmd>GoAddTest<cr>", { desc = "Go Add Test" })
+
 -- Fixing macro recording notifications
 vim.api.nvim_create_autocmd("RecordingEnter", {
 	callback = function()
