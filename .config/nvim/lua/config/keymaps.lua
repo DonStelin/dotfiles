@@ -23,7 +23,7 @@ map("n", "%", "%zz", { noremap = true, silent = true })
 map("n", "*", "*zz", { noremap = true, silent = true })
 map("n", "#", "#zz", { noremap = true, silent = true })
 
-map({ 'n', 'v' }, '<leader>n', ':norm ')
+map({ "n", "v" }, "<leader>n", ":norm ")
 
 map("n", "<leader>gtr", "<cmd>GoTestFunc<cr>", { desc = "Go Test Run" })
 map("n", "<leader>gtc", "<cmd>GoAddTest<cr>", { desc = "Go Add Test" })
