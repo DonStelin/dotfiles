@@ -4,6 +4,8 @@ if [[ $# -eq 1 ]]; then
 else
     selected=$(
         {
+
+            find "$HOME/Environment"  -mindepth 1 -maxdepth 1 -type d -print
             find "$HOME/College"  -mindepth 1 -maxdepth 1 -type d -print
             find "$HOME/Dev"      -mindepth 1 -maxdepth 2 -type d -print
             find "$HOME/Dotfiles" -mindepth 0 -maxdepth 0 -type d -print
