@@ -18,8 +18,7 @@ if [ -d "$DOTFILES_PATH" ]; then
     echo "The directory already exists"
 else
     echo -e "\nCloning repo"
-    git clone "https://github.com/DonStelin/dotfiles.git" "$HOME"
-    mv "$HOME/dotfiles" "$DOTFILES_PATH"
+    git clone "https://github.com/DonStelin/dotfiles.git" "$DOTFILES_PATH"
 fi
 
 cd "$DOTFILES_PATH"
