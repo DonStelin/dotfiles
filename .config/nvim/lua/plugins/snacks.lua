@@ -8,6 +8,7 @@ return {
     image = {
       enable = true,
     },
+    notifier = { enabled = true },
     picker = {
       enabled = true,
       hidden = true,
