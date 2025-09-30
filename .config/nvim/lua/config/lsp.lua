@@ -2,6 +2,7 @@ vim.lsp.enable({
 	"gopls",
 	"markdown_oxide",
 	"bashls",
+	"lua_ls",
 })
 
 vim.diagnostic.config({
