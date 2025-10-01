@@ -37,6 +37,6 @@ vim.opt.cursorline = true
 
 vim.opt.scrolloff = 10
 
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 
 vim.o.winborder = "rounded"
