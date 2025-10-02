@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 source "$REPO_DIR/scripts/lib/pkg.sh"
 
 echo "n\ ...Installing neovim..."
