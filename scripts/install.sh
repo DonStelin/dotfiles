@@ -6,7 +6,7 @@ script_dir="$REPO_DIR/scripts"
 "$script_dir/tmux.sh"
 "$script_dir/dev.sh"
 "$script_dir/global-scripts.sh"
-"$script_dir/hyrland.sh"
+"$script_dir/hyprland.sh"
 
 
 
