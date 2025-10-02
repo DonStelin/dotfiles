@@ -21,8 +21,6 @@ else
     git clone "https://github.com/DonStelin/dotfiles.git" "$REPO_DIR"
 fi
 
-cd "$REPO_DIR"
-git switch main
-cd - >/dev/null
+git -C "${REPO_DIR}" switch main
 
-bash "$REPO_DIR/scripts/nvim.sh"
+bash "$REPO_DIR/scripts/install.sh"
