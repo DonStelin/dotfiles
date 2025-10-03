@@ -6,5 +6,5 @@ target_dir="/usr/local/bin"
 for f in "$source_dir"/*;
 do
     name="$(basename "$f" .sh)"
-    ln -sf "$f" "$target_dir/$name"
+    sudo ln -sf "$f" "$target_dir/$name"
 done
