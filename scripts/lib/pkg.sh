@@ -9,7 +9,7 @@ pkg_install() {
         sudo pacman -S --noconfirm --needed "$@" 1> /dev/null
     fi
 
-    if grep -q "Debian" "$release_file"; then
+    if grep -q "Debian" "$release_file" || grep -q "Ubuntu" "$release_file"; then
         sudo apt install -y "$@" 1> /dev/null
     fi
 }
