@@ -1,5 +1,5 @@
 Configuration files for my daily tools
-- This config files can be easily installed using the script `init`
+- These config files can be easily installed using the script `init`
 - These dotfiles are intended to run on top of [Omarchy](https://omarchy.org/)
 - Still WIP
 
