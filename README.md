@@ -1,6 +1,6 @@
 Configuration files for my daily tools
-- These config files can be easily installed using the script `init`
-- These dotfiles are intended to run on top of [Omarchy](https://omarchy.org/)
+- Can be easily installed using the script `init`
+- Are intended to run on top of [Omarchy](https://omarchy.org/)
 - Still WIP
 
 ```bash
