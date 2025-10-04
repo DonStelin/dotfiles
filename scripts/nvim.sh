@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_DIR/scripts/lib/pkg.sh"
+nvim_path="$HOME/.config/nvim"
 
-echo "n\ ...Installing neovim..."
+echo -e "n\ ...Installing neovim..."
 pkg_install neovim
 
-rm -rf "$HOME/.config/nvim"
-ln -s "$REPO_DIR/.config/nvim"  "$HOME/.config/nvim"
+rm -rf "$nvim_path"
+ln -s "$REPO_DIR/env/.config/nvim"  "$nvim_path"
