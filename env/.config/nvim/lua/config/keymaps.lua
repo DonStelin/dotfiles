@@ -29,26 +29,26 @@ map("n", "<leader>gtr", "<cmd>GoTestFunc<cr>", { desc = "Go Test Run" })
 map("n", "<leader>gtc", "<cmd>GoAddTest<cr>", { desc = "Go Add Test" })
 
 -- Toggle Neogit
-local function find_neogit_window_id()
-	for _, win_id in ipairs(vim.api.nvim_list_wins()) do
-		local buf_id = vim.api.nvim_win_get_buf(win_id)
-		if vim.api.nvim_buf_is_valid(buf_id) then
-			local filetype = vim.api.nvim_buf_get_option(buf_id, "filetype")
-			if filetype and string.match(filetype, "^Neogit") then
-				return win_id
-			end
-		end
-	end
-	return nil
-end
-
-local function toggle_neogit()
-	local neogit_win_id = find_neogit_window_id()
-	if neogit_win_id then
-		vim.api.nvim_win_close(neogit_win_id, false)
-	else
-		vim.cmd("Neogit")
-	end
-end
-
-map("n", "<leader>tn", toggle_neogit, { noremap = true, silent = true, desc = "Alternar Neogit" })
+-- local function find_neogit_window_id()
+-- 	for _, win_id in ipairs(vim.api.nvim_list_wins()) do
+-- 		local buf_id = vim.api.nvim_win_get_buf(win_id)
+-- 		if vim.api.nvim_buf_is_valid(buf_id) then
+-- 			local filetype = vim.api.nvim_buf_get_option(buf_id, "filetype")
+-- 			if filetype and string.match(filetype, "^Neogit") then
+-- 				return win_id
+-- 			end
+-- 		end
+-- 	end
+-- 	return nil
+-- end
+--
+-- local function toggle_neogit()
+-- 	local neogit_win_id = find_neogit_window_id()
+-- 	if neogit_win_id then
+-- 		vim.api.nvim_win_close(neogit_win_id, false)
+-- 	else
+-- 		vim.cmd("Neogit")
+-- 	end
+-- end
+--
+-- map("n", "<leader>tn", toggle_neogit, { noremap = true, silent = true, desc = "Alternar Neogit" })

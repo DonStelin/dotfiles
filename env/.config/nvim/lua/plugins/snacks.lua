@@ -3,7 +3,7 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
-		statuscolumn = { enabled = true },
+		lazygit = { enabled = true },
 		input = { enabled = true },
 		image = {
 			enable = true,
@@ -55,18 +55,11 @@ return {
 			desc = "Command History",
 		},
 		{
-			"<leader>n",
+			"<leader>sn",
 			function()
 				Snacks.picker.notifications()
 			end,
 			desc = "Notification History",
-		},
-		{
-			"<leader>fc",
-			function()
-				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-			end,
-			desc = "Find Config File",
 		},
 		{
 			"<leader>sf",
@@ -76,54 +69,11 @@ return {
 			desc = "Find Files",
 		},
 		{
-			"<leader>fp",
-			function()
-				Snacks.picker.projects()
-			end,
-			desc = "Projects",
-		},
-		{
-			"<leader>fr",
-			function()
-				Snacks.picker.recent()
-			end,
-			desc = "Recent",
-		},
-		-- git
-		{
 			"<leader>gl",
 			function()
 				Snacks.picker.git_log()
 			end,
 			desc = "Git Log",
-		},
-		{
-			"<leader>gL",
-			function()
-				Snacks.picker.git_log_line()
-			end,
-			desc = "Git Log Line",
-		},
-		{
-			"<leader>gs",
-			function()
-				Snacks.picker.git_status()
-			end,
-			desc = "Git Status",
-		},
-		{
-			"<leader>gd",
-			function()
-				Snacks.picker.git_diff()
-			end,
-			desc = "Git Diff (Hunks)",
-		},
-		{
-			"<leader>gf",
-			function()
-				Snacks.picker.git_log_file()
-			end,
-			desc = "Git Log File",
 		},
 		{
 			"<leader>gb",
@@ -148,27 +98,12 @@ return {
 			desc = "Visual selection or word",
 			mode = { "n", "x" },
 		},
-		-- search
 		{
-			'<leader>s"',
+			"<leader>sr",
 			function()
 				Snacks.picker.registers()
 			end,
 			desc = "Registers",
-		},
-		{
-			"<leader>s/",
-			function()
-				Snacks.picker.search_history()
-			end,
-			desc = "Search History",
-		},
-		{
-			"<leader>sa",
-			function()
-				Snacks.picker.autocmds()
-			end,
-			desc = "Autocmds",
 		},
 		{
 			"<leader>sc",
@@ -178,7 +113,7 @@ return {
 			desc = "Command History",
 		},
 		{
-			"<leader>sC",
+			"<leader>sp",
 			function()
 				Snacks.picker.commands()
 			end,
@@ -206,25 +141,11 @@ return {
 			desc = "Help Pages",
 		},
 		{
-			"<leader>sH",
-			function()
-				Snacks.picker.highlights()
-			end,
-			desc = "Highlights",
-		},
-		{
 			"<leader>si",
 			function()
 				Snacks.picker.icons()
 			end,
 			desc = "Icons",
-		},
-		{
-			"<leader>sj",
-			function()
-				Snacks.picker.jumps()
-			end,
-			desc = "Jumps",
 		},
 		{
 			"<leader>sk",
@@ -234,46 +155,18 @@ return {
 			desc = "Keymaps",
 		},
 		{
-			"<leader>sl",
-			function()
-				Snacks.picker.loclist()
-			end,
-			desc = "Location List",
-		},
-		{
 			"<leader>sm",
-			function()
-				Snacks.picker.marks()
-			end,
-			desc = "Marks",
-		},
-		{
-			"<leader>sM",
 			function()
 				Snacks.picker.man()
 			end,
 			desc = "Man Pages",
 		},
 		{
-			"<leader>sp",
-			function()
-				Snacks.picker.lazy()
-			end,
-			desc = "Search for Plugin Spec",
-		},
-		{
-			"<leader>sq",
+			"<leader>sl",
 			function()
 				Snacks.picker.qflist()
 			end,
 			desc = "Quickfix List",
-		},
-		{
-			"<leader>sR",
-			function()
-				Snacks.picker.resume()
-			end,
-			desc = "Resume",
 		},
 		{
 			"<leader>su",
@@ -281,71 +174,6 @@ return {
 				Snacks.picker.undo()
 			end,
 			desc = "Undo History",
-		},
-		{
-			"<leader>uC",
-			function()
-				Snacks.picker.colorschemes()
-			end,
-			desc = "Colorschemes",
-		},
-		-- LSP
-		{
-			"gd",
-			function()
-				Snacks.picker.lsp_definitions()
-			end,
-			desc = "Goto Definition",
-		},
-		{
-			"gD",
-			function()
-				Snacks.picker.lsp_declarations()
-			end,
-			desc = "Goto Declaration",
-		},
-		{
-			"gr",
-			function()
-				Snacks.picker.lsp_references()
-			end,
-			nowait = true,
-			desc = "References",
-		},
-		{
-			"gI",
-			function()
-				Snacks.picker.lsp_implementations()
-			end,
-			desc = "Goto Implementation",
-		},
-		{
-			"gy",
-			function()
-				Snacks.picker.lsp_type_definitions()
-			end,
-			desc = "Goto T[y]pe Definition",
-		},
-		{
-			"<leader>ss",
-			function()
-				Snacks.picker.lsp_symbols()
-			end,
-			desc = "LSP Symbols",
-		},
-		{
-			"<leader>sS",
-			function()
-				Snacks.picker.lsp_workspace_symbols()
-			end,
-			desc = "LSP Workspace Symbols",
-		},
-		{
-			"<leader>fy",
-			function()
-				Snacks.git.blame_line()
-			end,
-			desc = "Git Blame Line",
 		},
 		{
 			"<leader>fr",
@@ -375,6 +203,12 @@ return {
 				Snacks.scratch.select()
 			end,
 			desc = "Select Scratch Buffer",
+		},
+		{
+			"<leader>lg",
+			function()
+				Snacks.lazygit()
+			end,
 		},
 	},
 }
