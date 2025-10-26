@@ -1,16 +1,25 @@
 #!/usr/bin/env bash
 
+# TODO: handle packages that require more steps
+#
 pkg_install() {
-    local release_file="/etc/os-release"
+    source /etc/os-release
 
     echo "Installing $@"
 
-    if grep -q "Cachy" "$release_file" || grep -q "Arch" "$release_file"; then
-        sudo pacman -S --noconfirm --needed "$@" 1> /dev/null
+    if [ "$ID" = "arch" ] || [ "$ID" = "cachyos" ]; then
+        sudo pacman -S --noconfirm --needed "$@"
+        return
     fi
 
-    if grep -q "Debian" "$release_file" || grep -q "Ubuntu" "$release_file"; then
-        sudo apt install -y "$@" 1> /dev/null
+    if [ "$ID" = "debian" ] || [ "$ID" = "ubuntu" ]; then
+        sudo apt-get update -y
+        sudo apt-get install -y "$@"
+        return
+    fi
+
+    if [ "$ID" = "fedora" ]; then
+        sudo dnf install -y "$@"
+        return
     fi
 }
-
