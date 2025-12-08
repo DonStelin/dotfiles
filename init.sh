@@ -19,8 +19,10 @@ if [ -d "$REPO_DIR" ]; then
 else
     echo -e "\nCloning repo"
     git clone "https://github.com/DonStelin/dotfiles.git" "$REPO_DIR"
+
 fi
 
+git -C "${REPO_DIR}" remote set-url origin git@github.com:DonStelin/dotfiles.git
 git -C "${REPO_DIR}" switch main
 
 bash "$REPO_DIR/scripts/install.sh"
