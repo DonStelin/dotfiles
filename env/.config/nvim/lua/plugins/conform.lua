@@ -1,4 +1,4 @@
-return { 
+return {
 	"stevearc/conform.nvim",
 	opts = {
 		notify_on_error = false,
@@ -10,6 +10,7 @@ return {
 			lua = { "stylua" },
 			go = { "goimports", "gofumpt" },
 			rust = { "rustfmt" },
+			c = { "clang-format" },
 			typescript = { "prettier" },
 			typescriptreact = { "prettier" },
 			javascript = { "prettier" },
