@@ -29,7 +29,7 @@ return {
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>ca", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
 					map("gd", require("snacks").picker.lsp_definitions, "[G]oto [D]definition")
-					map("gr", require("snacks").picker.lsp_references, "[G]oto [R]eferences")
+					map("grr", require("snacks").picker.lsp_references, "[G]oto [R]eferences")
 					map("gI", require("snacks").picker.lsp_implementations, "[G]oto [I]mplementation")
 					map("<leader>fS", require("snacks").picker.lsp_symbols, "[D]ocument [S]symbols")
 					map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
