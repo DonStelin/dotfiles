@@ -121,9 +121,12 @@ return {
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			local servers = {
+				bashls = {},
 				clangd = {},
 				gopls = {},
+				markdown_oxide = {},
 				rust_analyzer = {},
+				tinymist = {},
 				ts_ls = {},
 				lua_ls = {
 					settings = {

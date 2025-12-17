@@ -15,4 +15,4 @@ ln -s "$REPO_DIR/env/.config/yazi" "$yazi_path"
 ya pkg add dedukun/bookmarks
 
 echo "...::Installing dev utilities::..."
-pkg_install fzf go typst nvm yq
+pkg_install fzf go typst nvm yq rustup
