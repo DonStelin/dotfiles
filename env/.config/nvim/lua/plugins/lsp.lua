@@ -123,6 +123,7 @@ return {
 			local servers = {
 				bashls = {},
 				clangd = {},
+				cssls = {},
 				gopls = {},
 				html = {},
 				markdown_oxide = {},
