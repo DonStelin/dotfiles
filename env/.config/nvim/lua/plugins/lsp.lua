@@ -124,10 +124,13 @@ return {
 				bashls = {},
 				clangd = {},
 				cssls = {},
+				emmet_language_server = {},
 				gopls = {},
 				html = {},
 				markdown_oxide = {},
 				rust_analyzer = {},
+				svelte = {},
+				tailwindcss = {},
 				tinymist = {},
 				ts_ls = {},
 				lua_ls = {
