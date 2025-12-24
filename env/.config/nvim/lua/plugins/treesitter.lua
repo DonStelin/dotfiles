@@ -23,6 +23,7 @@ return {
 			"tsx",
 			"jsdoc",
 			"typst",
+			"svelte",
 		})
 
 		local group = vim.api.nvim_create_augroup("TreesitterSetup", { clear = true })

@@ -25,6 +25,7 @@ return {
 			typescriptreact = { "prettier" },
 			vue = { "prettier" },
 			yaml = { "prettier" },
+			svelte = { "prettier" },
 		},
 	},
 }
