@@ -1,70 +1,68 @@
 return {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {},
-	config = function()
-		require("tokyonight").setup({
-			style = "moon",
-			transparent = true,
-			styles = {
-				comments = { italic = false },
-				keywords = { italic = false },
-				sidebars = "transparent",
-				floats = "transparent",
-			},
-		})
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("gruvbox").setup({
+	-- 			transparent_mode = true,
+	-- 		})
+	-- 		vim.cmd("colorscheme gruvbox")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"sainnhe/gruvbox-material",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.g.gruvbox_material_enable_italic = true
+	--
+	-- 		vim.g.gruvbox_material_transparent_background = 2
+	--
+	-- 		vim.cmd.colorscheme("gruvbox-material")
+	-- 	end,
+	-- },
 
-		vim.cmd("colorscheme tokyonight-storm")
-	end,
+	-- {
+	-- 	"tiagovla/tokyodark.nvim",
+	-- 	opts = {
+	-- 		transparent_background = true,
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		require("tokyodark").setup(opts) -- calling setup is optional
+	-- 		vim.cmd([[colorscheme tokyodark]])
+	-- 	end,
+	-- },
+	{
+		"dgox16/oldworld.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("oldworld")
+		end,
+	},
+
+	{
+		"xiyaowong/transparent.nvim",
+		lazy = false,
+		priority = 10000,
+	},
+
+	-- return {
+	-- 	"AetherSyscall/AetherAmethyst.nvim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("aetheramethyst").setup({
+	-- 			transparent = true, -- Enable transparent background
+	-- 			styles = {
+	-- 				comments = { italic = true },
+	-- 				keywords = { italic = true },
+	-- 				functions = { bold = true },
+	-- 				variables = {},
+	-- 			},
+	-- 		})
+	--
+	-- 		-- Load the variant: 'eclipse' (dark) or 'bliss' (light)
+	-- 		vim.cmd("colorscheme aetheramethyst-eclipse")
+	-- 	end,
+	-- }
 }
---
--- return {
--- 	"catppuccin/nvim",
--- 	name = "catppuccin",
--- 	priority = 1000,
--- 	config = function()
--- 		require("catppuccin").setup({
--- 			flavour = "mocha",
--- 			transparent_background = true, -- disables setting the background color.
--- 			float = {
--- 				transparent = true, -- enable transparent floating windows
--- 			},
--- 		})
---
--- 		vim.cmd.colorscheme("catppuccin")
--- 	end,
--- }
-
--- return {
--- 	"rebelot/kanagawa.nvim",
--- 	priority = 1000,
---
--- 	config = function()
--- 		require("kanagawa").setup({
--- 			commentStyle = { italic = false },
--- 			keywordStyle = { italic = false },
--- 			statementStyle = { bold = true },
--- 			transparent = true,
--- 		})
--- 		vim.cmd("colorscheme kanagawa-dragon")
--- 	end,
--- }
-
--- return {
--- 	{
--- 		"rose-pine/neovim",
--- 		name = "rose-pine",
--- 		config = function()
--- 			require("rose-pine").setup({
--- 				styles = {
--- 					bold = true,
--- 					italic = false,
--- 					transparency = true,
--- 				},
--- 			})
---
--- 			vim.cmd("colorscheme rose-pine")
--- 		end,
--- 	},
--- }
