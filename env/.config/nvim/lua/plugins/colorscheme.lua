@@ -47,22 +47,22 @@ return {
 		priority = 10000,
 	},
 
-	-- return {
-	-- 	"AetherSyscall/AetherAmethyst.nvim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("aetheramethyst").setup({
-	-- 			transparent = true, -- Enable transparent background
-	-- 			styles = {
-	-- 				comments = { italic = true },
-	-- 				keywords = { italic = true },
-	-- 				functions = { bold = true },
-	-- 				variables = {},
-	-- 			},
-	-- 		})
-	--
-	-- 		-- Load the variant: 'eclipse' (dark) or 'bliss' (light)
-	-- 		vim.cmd("colorscheme aetheramethyst-eclipse")
-	-- 	end,
-	-- }
+	--  {
+	--  	"AetherSyscall/AetherAmethyst.nvim",
+	--  	priority = 1000,
+	--  	config = function()
+	--  		require("aetheramethyst").setup({
+	--  			transparent = true, -- Enable transparent background
+	--  			styles = {
+	--  				comments = { italic = true },
+	--  				keywords = { italic = true },
+	--  				functions = { bold = true },
+	--  				variables = {},
+	--  			},
+	--  		})
+	-- --
+	--  		-- Load the variant: 'eclipse' (dark) or 'bliss' (light)
+	--  		vim.cmd("colorscheme aetheramethyst-eclipse")
+	--  	end,
+	--  }
 }
