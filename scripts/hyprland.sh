@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
 hypr_conf_dir="$HOME/.config/hypr"
 hypr_conf_file="$hypr_conf_dir/hyprland.conf"
 repo_hypr_conf="$REPO_DIR/env/.config/hypr"

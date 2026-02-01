@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REPO_DIR="$HOME/Dotfiles/"
+REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
 source "$REPO_DIR/scripts/lib/pkg.sh"
 
 tmux_path="$HOME/.config/tmux"

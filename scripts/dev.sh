@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-REPO_DIR="$HOME/Dotfiles/"
+REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
 yazi_path="$HOME/.config/yazi"
 
 source "$REPO_DIR/scripts/lib/pkg.sh"

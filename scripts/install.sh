@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
 script_dir="$REPO_DIR/scripts"
 
 bash "$script_dir/nvim.sh"

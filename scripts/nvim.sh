@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
 source "$REPO_DIR/scripts/lib/pkg.sh"
 nvim_path="$HOME/.config/nvim"
 
