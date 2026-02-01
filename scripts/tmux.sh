@@ -7,8 +7,17 @@ tmux_path="$HOME/.config/tmux"
 tmux_config="$REPO_DIR/env/.config/tmux"
 tpm_path="$HOME/.tmux/plugins/tpm"
 
+install_tmux() {
+    if is_fedora; then
+        # TODO: Logica fedora
+        :
+    elif is_arch; then
+        sudo pacman -S --noconfirm --needed tmux
+    fi
+}
+
 echo -e "\n ...Installing tmux..."
-pkg_install tmux
+install_tmux
 
 rm -rf "$tmux_path"
 mkdir "$tmux_path"

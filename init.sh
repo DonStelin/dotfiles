@@ -14,6 +14,11 @@ if grep -q "Debian" "$release_file" || grep -q "Ubuntu" "$release_file"; then
     sudo apt install -y git
 fi
 
+if grep -q "Fedora" "$release_file" || grep -q "Nobara" "$release_file"; then
+    # TODO: Logica fedora
+    :
+fi
+
 if [ -d "$REPO_DIR" ]; then
     echo "The directory already exists"
 else

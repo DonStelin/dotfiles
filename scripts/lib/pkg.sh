@@ -1,25 +1,17 @@
 #!/usr/bin/env bash
 
-# TODO: handle packages that require more steps
-#
-pkg_install() {
+# Helper functions for distro detection
+# These are used by individual install scripts
+
+detect_distro() {
     source /etc/os-release
+    echo "$ID"
+}
 
-    echo "Installing $@"
+is_fedora() {
+    [[ "$(detect_distro)" =~ ^(fedora|nobara)$ ]]
+}
 
-    if [ "$ID" = "arch" ] || [ "$ID" = "cachyos" ]; then
-        sudo pacman -S --noconfirm --needed "$@"
-        return
-    fi
-
-    if [ "$ID" = "debian" ] || [ "$ID" = "ubuntu" ]; then
-        sudo apt-get update -y
-        sudo apt-get install -y "$@"
-        return
-    fi
-
-    if [ "$ID" = "fedora" ]; then
-        sudo dnf install -y "$@"
-        return
-    fi
+is_arch() {
+    [[ "$(detect_distro)" =~ ^(arch|cachyos)$ ]]
 }
