@@ -1,0 +1,14 @@
+font-family = "Paper Mono"
+
+background-opacity = 0.9
+window-decoration = none
+window-padding-x = 14
+window-padding-y = 14
+
+cursor-style-blink = false
+cursor-style = "block"
+
+confirm-close-surface = false
+mouse-scroll-multiplier = 0.95
+
+

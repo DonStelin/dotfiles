@@ -22,30 +22,30 @@ return {
 	-- 	end,
 	-- },
 
-	-- {
-	-- 	"tiagovla/tokyodark.nvim",
-	-- 	opts = {
-	-- 		transparent_background = true,
-	-- 	},
-	-- 	config = function(_, opts)
-	-- 		require("tokyodark").setup(opts) -- calling setup is optional
-	-- 		vim.cmd([[colorscheme tokyodark]])
-	-- 	end,
-	-- },
 	{
-		"dgox16/oldworld.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme("oldworld")
+		"tiagovla/tokyodark.nvim",
+		opts = {
+			transparent_background = true,
+		},
+		config = function(_, opts)
+			require("tokyodark").setup(opts) -- calling setup is optional
+			vim.cmd([[colorscheme tokyodark]])
 		end,
 	},
-
-	{
-		"xiyaowong/transparent.nvim",
-		lazy = false,
-		priority = 10000,
-	},
+	-- {
+	-- 	"dgox16/oldworld.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("oldworld")
+	-- 	end,
+	-- },
+	--
+	-- {
+	-- 	"xiyaowong/transparent.nvim",
+	-- 	lazy = false,
+	-- 	priority = 10000,
+	-- },
 
 	--  {
 	--  	"AetherSyscall/AetherAmethyst.nvim",
