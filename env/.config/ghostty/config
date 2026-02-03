@@ -1,6 +1,8 @@
+config-file = ?"./theme"
 font-family = "Paper Mono"
+font-size = 14
 
-background-opacity = 0.9
+background-opacity = 0.90
 window-decoration = none
 window-padding-x = 14
 window-padding-y = 14
@@ -10,5 +12,3 @@ cursor-style = "block"
 
 confirm-close-surface = false
 mouse-scroll-multiplier = 0.95
-
-

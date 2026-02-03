@@ -12,7 +12,3 @@ bash "$script_dir/dev.sh"
 bash "$script_dir/global.sh"
 bash "$script_dir/hyprland.sh"
 bash "$script_dir/gaming.sh"
-
-
-
-

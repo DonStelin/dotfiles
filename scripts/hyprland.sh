@@ -18,7 +18,7 @@ if [[ -f "$hypr_conf_file" ]]; then
 
   grep -qxF 'source = ~/.config/hypr/monitors.conf' "$hypr_conf_file" ||
     echo 'source = ~/.config/hypr/monitors.conf' >>"$hypr_conf_file"
-  
+
   echo "Hyprland configuration completed successfully"
 else
   echo "Warning: hyprland.conf not found at $hypr_conf_file"

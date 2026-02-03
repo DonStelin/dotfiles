@@ -9,9 +9,9 @@ tpm_path="$HOME/.tmux/plugins/tpm"
 
 install_tmux() {
   if is_fedora; then
-    sudo dnf install -y tmux
+    sudo dnf install -y tmux yq
   elif is_arch; then
-    sudo pacman -S --noconfirm --needed tmux
+    sudo pacman -S --noconfirm --needed tmux yq
   fi
 }
 
