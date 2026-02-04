@@ -31,55 +31,9 @@ install_lazygit() {
   fi
 }
 
-install_ffmpeg() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed ffmpeg
-  fi
-}
-
-install_7zip() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed 7zip
-  fi
-}
-
-install_jq() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed jq
-  fi
-}
-
-install_poppler() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed poppler
-  fi
-}
-
-install_fd() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed fd
-  fi
-}
-
 install_ripgrep() {
   if is_fedora; then
-    # TODO: Logica fedora
-    :
+    sudo dnf install -y ripgrep
   elif is_arch; then
     sudo pacman -S --noconfirm --needed ripgrep
   fi
@@ -93,30 +47,11 @@ install_fzf() {
   fi
 }
 
-install_zoxide() {
+install_bat() {
   if is_fedora; then
-    # TODO: Logica fedora
-    :
+    sudo dnf install -y bat
   elif is_arch; then
-    sudo pacman -S --noconfirm --needed zoxide
-  fi
-}
-
-install_resvg() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed resvg
-  fi
-}
-
-install_imagemagick() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed imagemagick
+    sudo pacman -S --noconfirm --needed bat
   fi
 }
 
@@ -129,11 +64,11 @@ install_go() {
 }
 
 install_typst() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed typst
+  if command -v cargo &>/dev/null; then
+    cargo install --locked typst-cli
+  else
+    echo "Error: cargo is not installed. Please install rustup first."
+    return 1
   fi
 }
 
@@ -143,15 +78,6 @@ install_nvm() {
     :
   elif is_arch; then
     sudo pacman -S --noconfirm --needed nvm
-  fi
-}
-
-install_yq() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed yq
   fi
 }
 
@@ -169,33 +95,25 @@ echo "Directories created successfully"
 
 echo "...::Installing terminal and dev tools::..."
 install_fzf
-install_zoxide
-install_fd
 install_ripgrep
+install_bat
 
 echo "Linking yazi configuration..."
 ln -s "$REPO_DIR/env/.config/yazi" "$yazi_path"
 echo "Yazi configuration linked successfully"
 
-echo -e "\n...Installing yazi and dependencies..."
+echo -e "\n...Installing yazi..."
 install_yazi
-install_ffmpeg
-install_7zip
-install_jq
-install_poppler
-install_resvg
-install_imagemagick
 
 echo "Installing yazi plugins..."
 ya pkg add dedukun/bookmarks
 
 echo -e "\n...Installing dev utilities..."
 install_lazygit
+install_rustup
 install_go
 install_typst
 install_nvm
-install_yq
-install_rustup
 
 echo "Development tools installed successfully"
 install_opencode

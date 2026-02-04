@@ -25,9 +25,10 @@ bindkey -e
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
-alias tms='tmux-sessionizer'
+alias cat='bat --theme=Nord'
 alias cnvim='nvim --clean'
 alias grep="grep --color=auto"
+alias tms='tmux-sessionizer'
 
 NEWLINE=$'\n'
 PROMPT="${NEWLINE}%K{#414868}%F{#c0caf5} %~ %f%k %F{#bb9af7}❯ %f"
