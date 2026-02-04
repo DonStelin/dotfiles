@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
-yazi_path="$HOME/.config/yazi"
+yazi_path="$XDG_CONFIG_HOME/yazi"
 
 source "$REPO_DIR/scripts/lib/pkg.sh"
 

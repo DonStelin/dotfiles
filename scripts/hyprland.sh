@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
-hypr_conf_dir="$HOME/.config/hypr"
+hypr_conf_dir="$XDG_CONFIG_HOME/hypr"
 hypr_conf_file="$hypr_conf_dir/hyprland.conf"
 repo_hypr_conf="$REPO_DIR/env/.config/hypr"
 
@@ -13,11 +14,11 @@ if [[ -f "$hypr_conf_file" ]]; then
   ln -sf "$repo_hypr_conf/monitors.conf" "$hypr_conf_dir/"
 
   echo "Adding source directives to hyprland.conf..."
-  grep -qxF 'source = ~/.config/hypr/custom.conf' "$hypr_conf_file" ||
-    echo 'source = ~/.config/hypr/custom.conf' >>"$hypr_conf_file"
+  grep -qxF "source = $XDG_CONFIG_HOME/hypr/custom.conf" "$hypr_conf_file" ||
+    echo "source = $XDG_CONFIG_HOME/hypr/custom.conf" >>"$hypr_conf_file"
 
-  grep -qxF 'source = ~/.config/hypr/monitors.conf' "$hypr_conf_file" ||
-    echo 'source = ~/.config/hypr/monitors.conf' >>"$hypr_conf_file"
+  grep -qxF "source = $XDG_CONFIG_HOME/hypr/monitors.conf" "$hypr_conf_file" ||
+    echo "source = $XDG_CONFIG_HOME/hypr/monitors.conf" >>"$hypr_conf_file"
 
   echo "Hyprland configuration completed successfully"
 else

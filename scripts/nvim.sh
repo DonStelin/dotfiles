@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
 source "$REPO_DIR/scripts/lib/pkg.sh"
-nvim_path="$HOME/.config/nvim"
+nvim_path="$XDG_CONFIG_HOME/nvim"
 
 install_neovim() {
   if is_fedora; then

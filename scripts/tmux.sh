@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
 source "$REPO_DIR/scripts/lib/pkg.sh"
 
-tmux_path="$HOME/.config/tmux"
+tmux_path="$XDG_CONFIG_HOME/tmux"
 tmux_config="$REPO_DIR/env/.config/tmux"
-tpm_path="$HOME/.tmux/plugins/tpm"
+tpm_path="$XDG_DATA_HOME/tmux/plugins/tpm"
 
 install_tmux() {
   if is_fedora; then
