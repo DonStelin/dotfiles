@@ -26,6 +26,12 @@ return {
 		"tiagovla/tokyodark.nvim",
 		opts = {
 			transparent_background = true,
+			custom_highlights = function(highlights, palette)
+				return {
+					Visual = { bg = "#444444", fg = "none" },
+					Search = { bg = "#d19a66", fg = "#282c34" },
+				}
+			end,
 		},
 		config = function(_, opts)
 			require("tokyodark").setup(opts) -- calling setup is optional

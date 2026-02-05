@@ -31,7 +31,7 @@ alias grep="grep --color=auto"
 alias tms='tmux-sessionizer'
 
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%K{#414868}%F{#c0caf5} %~ %f%k %F{#bb9af7}❯ %f"
+PROMPT="${NEWLINE}%K{#414868}%F{#c0caf5} %~ %f%k %F{#c0caf5}❯ %f"
 
 HISTSIZE=3000
 SAVEHIST=3000
