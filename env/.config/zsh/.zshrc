@@ -44,3 +44,4 @@ setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt auto_param_slash
+
