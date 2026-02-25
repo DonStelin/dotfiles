@@ -24,7 +24,10 @@ return {
 		-- C-e: Hide menu
 		-- C-k: Toggle signature help (if signature.enabled = true)
 		--
+		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
+		--
+		snippets = { preset = "luasnip" },
 		keymap = { preset = "default" },
 
 		appearance = {
@@ -39,7 +42,7 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "snippets", "lsp", "path" },
+			default = { "lsp", "path", "snippets", "buffer" },
 		},
 
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
