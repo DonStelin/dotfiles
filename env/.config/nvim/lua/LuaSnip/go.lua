@@ -54,7 +54,6 @@ local transform = function(text, info)
 		end
 	end
 
-	-- Find the matching condition to get the correct default value
 	for condition, result in pairs(default_values) do
 		if condition_matches(condition, text, info) then
 			if type(result) == "string" then
@@ -110,7 +109,7 @@ local function go_result_type(info)
 
 	if not node then
 		vim.notify("Not inside of a function")
-		return t("")
+		return { i(1) }
 	end
 
 	local query = assert(vim.treesitter.query.get("go", "return-snippet"), "No query")
@@ -119,6 +118,8 @@ local function go_result_type(info)
 			return handlers[capture:type()](capture, info)
 		end
 	end
+
+	return { i(1) }
 end
 
 local go_return_values = function(args)
@@ -169,7 +170,7 @@ func <name>(<args>) <r> {
 				finish = i(0),
 			}
 		),
-		{ description = "Define a Go function signature" }
+		{ description = "Function signature" }
 	),
 	s(
 		"tf",
@@ -184,7 +185,7 @@ func Test<name>(t *testing.T) {
 				finish = i(0),
 			}
 		),
-		{ description = "Define a Go test function" }
+		{ description = "Test function" }
 	),
 	s(
 		"sm",
@@ -203,7 +204,24 @@ func (<receiver> <type>) <name>(<args>) <r> {
 				finish = i(0),
 			}
 		),
-		{ description = "Define a Go struct method" }
+		{ description = "Struct method" }
+	),
+	s(
+		"cok",
+		fmta(
+			[[
+<val>, ok := <expr>
+if !ok {
+    <finish>
+}
+]],
+			{
+				val = i(1, "val"),
+				expr = i(2),
+				finish = i(0),
+			}
+		),
+		{ description = "Comma ok idiom" }
 	),
 }
 
