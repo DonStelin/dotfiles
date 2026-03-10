@@ -5,7 +5,3 @@ export PATH=/home/stelin/.opencode/bin:$PATH
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 . "$HOME/.cargo/env"
 
-
-
-
-
