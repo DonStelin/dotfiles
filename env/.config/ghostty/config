@@ -15,3 +15,4 @@ mouse-scroll-multiplier = 0.95
 
 resize-overlay = never
 copy-on-select = clipboard
+shell-integration-features = ssh-env,ssh-terminfo

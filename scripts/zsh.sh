@@ -26,4 +26,5 @@ mkdir -p "$XDG_CONFIG_HOME"
 echo "Linking zsh configuration directory..."
 ln -s "$REPO_DIR/env/.config/zsh" "$XDG_CONFIG_HOME/zsh"
 
+chsh -s $(which zsh)
 echo "Zsh installed successfully"

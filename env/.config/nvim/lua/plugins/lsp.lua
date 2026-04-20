@@ -26,7 +26,7 @@ return {
 						vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
 
-					map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
+					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
 					map("gd", require("snacks").picker.lsp_definitions, "[G]oto [D]efinition")
 					map("grr", require("snacks").picker.lsp_references, "[G]oto [R]eferences")

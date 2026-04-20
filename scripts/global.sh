@@ -17,4 +17,3 @@ for f in "$source_dir"/*; do
 done
 
 echo "Global scripts installed successfully"
-echo "Make sure you have '$target_dir' in your PATH"

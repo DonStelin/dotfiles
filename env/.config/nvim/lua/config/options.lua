@@ -11,6 +11,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.clipboard = "unnamedplus"
+
 vim.opt.termguicolors = true
 
 vim.opt.breakindent = true
@@ -40,3 +41,16 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = false
 
 vim.o.winborder = "rounded"
+
+vim.g.clipboard = {
+	name = "WlClipboard",
+	copy = {
+		["+"] = "wl-copy",
+		["*"] = "wl-copy",
+	},
+	paste = {
+		["+"] = "wl-paste",
+		["*"] = "wl-paste",
+	},
+	cache_enabled = 1,
+}
