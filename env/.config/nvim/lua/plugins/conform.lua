@@ -23,7 +23,7 @@ return {
 			rust = { "rustfmt" },
 			scss = { "prettierd" },
 			sh = { "shfmt" },
-			svelte = { "prettierd" },
+			svelte = { "prettier" },
 			typescript = { "prettierd" },
 			typescriptreact = { "prettierd" },
 			vue = { "prettierd" },
