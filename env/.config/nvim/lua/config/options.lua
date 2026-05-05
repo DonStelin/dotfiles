@@ -10,7 +10,7 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
--- vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.termguicolors = true
 
@@ -42,15 +42,5 @@ vim.opt.hlsearch = false
 
 vim.o.winborder = "rounded"
 
--- vim.g.clipboard = {
--- 	name = "WlClipboard",
--- 	copy = {
--- 		["+"] = "wl-copy",
--- 		["*"] = "wl-copy",
--- 	},
--- 	paste = {
--- 		["+"] = "wl-paste",
--- 		["*"] = "wl-paste",
--- 	},
--- 	cache_enabled = 1,
--- }
+vim.cmd([[hi @lsp.type.number gui=bold]])
+vim.cmd([[set mouse=]])

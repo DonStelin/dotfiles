@@ -89,6 +89,13 @@ install_rustup() {
   fi
 }
 
+install_fd() {
+  if is_fedora; then
+    sudo dnf install -y fd-find
+  elif is_arch; then
+  fi
+}
+
 echo -e "\n...Setting up directories..."
 mkdir -p "$HOME/College" "$HOME/Dev" "$HOME/Notes" "$HOME/Environment"
 echo "Directories created successfully"
@@ -96,11 +103,10 @@ echo "Directories created successfully"
 echo "...::Installing terminal and dev tools::..."
 install_fzf
 install_ripgrep
-install_bat
 
 echo "Linking yazi configuration..."
 ln -s "$REPO_DIR/env/.config/yazi" "$yazi_path"
-echo "Yazi configuration linked successfully"
+echo "Yazi configuration linked"
 
 echo -e "\n...Installing yazi..."
 install_yazi
@@ -114,6 +120,6 @@ install_rustup
 install_go
 install_typst
 install_nvm
-
-echo "Development tools installed successfully"
+install_fd
 install_opencode
+

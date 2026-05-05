@@ -17,7 +17,7 @@ return {
 			html = { "prettierd" },
 			javascript = { "prettierd" },
 			javascriptreact = { "prettierd" },
-			json = { "prettierd" },
+			json = { "prettier" },
 			lua = { "stylua" },
 			markdown = { "prettierd" },
 			rust = { "rustfmt" },
