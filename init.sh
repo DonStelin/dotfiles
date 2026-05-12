@@ -6,24 +6,25 @@ echo -e "\nInstalling git"
 release_file="/etc/os-release"
 
 if grep -q "Cachy" "$release_file" || grep -q "Arch" "$release_file"; then
-    sudo pacman -Syu --noconfirm --needed git paru
+  sudo pacman -Syu --noconfirm --needed git paru
 fi
 
 if grep -q "Debian" "$release_file" || grep -q "Ubuntu" "$release_file"; then
-    sudo apt update
-    sudo apt install -y git
+  sudo apt update
+  sudo apt install -y git
 fi
 
 if grep -q "Fedora" "$release_file" || grep -q "Nobara" "$release_file"; then
-    # TODO: Logica fedora
-    :
+  sudo dnf update
+  sudo dnf install -y git
+  :
 fi
 
 if [ -d "$REPO_DIR" ]; then
-    echo "The directory already exists"
+  echo "The directory already exists"
 else
-    echo -e "\nCloning repo"
-    git clone "https://github.com/DonStelin/dotfiles.git" "$REPO_DIR"
+  echo -e "\nCloning repo"
+  git clone "https://github.com/DonStelin/dotfiles.git" "$REPO_DIR"
 
 fi
 
