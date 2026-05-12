@@ -17,7 +17,6 @@ fi
 if grep -q "Fedora" "$release_file" || grep -q "Nobara" "$release_file"; then
   sudo dnf update
   sudo dnf install -y git
-  :
 fi
 
 if [ -d "$REPO_DIR" ]; then
