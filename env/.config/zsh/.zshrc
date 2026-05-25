@@ -29,6 +29,7 @@ alias cat='bat --theme=Nord'
 alias cnvim='nvim --clean'
 alias grep="grep --color=auto"
 alias tms='tmux-sessionizer'
+alias mv='mv -i'
 
 NEWLINE=$'\n'
 PROMPT="${NEWLINE}%K{#414868}%F{#c0caf5} %~ %f%k %F{#c0caf5}❯ %f"
@@ -46,5 +47,5 @@ setopt hist_save_no_dups
 setopt auto_param_slash
 
 export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Carga nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Carga autocompletado
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
