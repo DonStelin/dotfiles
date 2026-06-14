@@ -25,7 +25,6 @@ bindkey -e
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
-alias cat='bat --theme=Nord'
 alias cnvim='nvim --clean'
 alias grep="grep --color=auto"
 alias tms='tmux-sessionizer'

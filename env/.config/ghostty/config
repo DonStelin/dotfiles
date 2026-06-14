@@ -3,7 +3,7 @@ config-file = ?"./theme"
 font-family = "Paper Mono"
 font-size = 14
 
-background-opacity = 0.90
+background-opacity = 0.95
 window-decoration = none
 window-padding-x = 14
 window-padding-y = 14
