@@ -29,7 +29,6 @@ alias cnvim='nvim --clean'
 alias grep="grep --color=auto"
 alias tms='tmux-sessionizer'
 alias mv='mv -i'
-alias cat='bat --theme=Nord'
 alias ls='ls -laFh --color=auto'
 
 NEWLINE=$'\n'
