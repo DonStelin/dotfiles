@@ -96,6 +96,7 @@ return {
 				clangd = {},
 				cssls = {},
 				emmet_language_server = {},
+				intelephense = {},
 				gopls = {},
 				html = {},
 				markdown_oxide = {},

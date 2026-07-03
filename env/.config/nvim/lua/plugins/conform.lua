@@ -3,13 +3,13 @@ return {
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
 	opts = {
-		notify_on_error = false,
+		notify_on_error = true,
 		format_on_save = {
 			timeout_ms = 500,
 			lsp_format = "fallback",
 		},
 		formatters_by_ft = {
-			["*"] = { "codespell" },
+			-- ["*"] = { "codespell" },
 			["_"] = { "trim_whitespace" },
 			c = { "clang-format" },
 			css = { "prettierd" },
@@ -28,6 +28,7 @@ return {
 			typescriptreact = { "prettierd" },
 			vue = { "prettierd" },
 			yaml = { "prettierd" },
+			php = { "php_cs_fixer" },
 		},
 		formatters = {
 			prettierd = {

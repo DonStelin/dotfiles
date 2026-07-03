@@ -1,6 +1,9 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
+		lazy = false,
+		build = ":TSUpdate",
 		config = function()
 			local filetypes = {
 				"bash",
@@ -19,7 +22,6 @@ return {
 				"javascript",
 				"latex",
 				"scss",
-				"svelte",
 				"tsx",
 				"typst",
 				"vue",
@@ -29,20 +31,10 @@ return {
 			require("nvim-treesitter").install(filetypes)
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = filetypes,
-				callback = function()
-					vim.treesitter.start()
+				callback = function(ev)
+					pcall(vim.treesitter.start, ev.buf)
 				end,
 			})
-		end,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		branch = "main",
-		init = function()
-			vim.g.no_plugin_maps = true
-		end,
-		config = function()
-			-- put your config here
 		end,
 	},
 }

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# !TODO: FIX THIS :/
+
 source="https://github.com/paper-design/paper-mono/releases/latest/download"
 dest="$HOME/.local/share/fonts"
 

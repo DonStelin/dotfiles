@@ -1,6 +1,6 @@
 config-file = ?"./theme"
 
-font-family = "Paper Mono"
+font-family = "IBM Plex Mono"
 font-size = 14
 
 background-opacity = 0.95
