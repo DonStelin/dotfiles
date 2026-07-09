@@ -1,11 +1,15 @@
 return {
-	"vague-theme/vague.nvim",
-	priority = 1000,
+	"rose-pine/neovim",
+	name = "rose-pine",
 	config = function()
-		require("vague").setup({
-			transparent = true,
-			italic = false,
+		require("rose-pine").setup({
+
+			styles = {
+				-- bold = true,
+				-- italic = true,
+				transparency = true,
+			},
 		})
-		vim.cmd("colorscheme vague")
+		vim.cmd("colorscheme rose-pine")
 	end,
 }
