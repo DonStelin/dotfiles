@@ -11,8 +11,7 @@ mkdir -p "$target_dir"
 echo "Copying global scripts to $target_dir..."
 for f in "$source_dir"/*; do
   name="$(basename "$f" .sh)"
-  cp "$f" "$target_dir/$name"
-  chmod +x "$target_dir/$name"
+  ln -s "$f" "$target_dir/$name"
   echo "Copied: $name"
 done
 
