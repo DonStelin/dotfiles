@@ -3,11 +3,7 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
-		lazygit = { enabled = true },
 		input = { enabled = true },
-		image = {
-			enable = true,
-		},
 		notifier = { enabled = true },
 		picker = {
 			enabled = true,
@@ -203,12 +199,6 @@ return {
 				Snacks.scratch.select()
 			end,
 			desc = "Select Scratch Buffer",
-		},
-		{
-			"<leader>lg",
-			function()
-				Snacks.lazygit()
-			end,
 		},
 	},
 }
