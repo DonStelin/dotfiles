@@ -33,11 +33,34 @@ alias mv='mv --interactive --verbose'
 alias rm='rm --recursive --verbose'
 alias tms='tmux-sessionizer'
 
-NEWLINE=$'\n'
+
+
 # PROMPT="${NEWLINE}%K{#414868}%F{#c0caf5} %~ %f%k %F{#c0caf5}❯ %f"
 # PROMPT="${NEWLINE}%K{#332b46}%F{#d4c2f0} %~ %f%k %F{#b394d6}❯ %f"
-PROMPT="${NEWLINE}%K{#18151e}%F{#c4a7e7} %~ %f%k %F{#c4a7e7}❯ %f"
+# PROMPT="${NEWLINE}%K{#18151e}%F{#c4a7e7} %~ %f%k %F{#c4a7e7}❯ %f"
 # PROMPT="${NEWLINE}%K{#a78bca}%F{#18151e} %~ %f%k %F{#a78bca}❯ %f"
+#
+#
+NEWLINE=$'\n'
+
+vcs_branch_info() {
+  local info
+
+  if [[ -d .jj || -n $JJ_ROOT ]] || [[ -d ../.jj ]]; then
+    if info=$(jj log --no-graph -r @ \
+      -T 'change_id.shortest() ++ " " ++ bookmarks' 2>/dev/null); then
+      echo "%F{#c0caf5} jj:${info}%f"
+      return
+    fi
+  fi
+
+  if info=$(git branch --show-current 2>/dev/null); then
+    [[ -n $info ]] && echo "%F{#c0caf5} git:${info}%f"
+  fi
+}
+
+setopt PROMPT_SUBST
+PROMPT='${NEWLINE}%K{#18151e}%F{#c4a7e7} %~ %f$(vcs_branch_info) %k %F{#c4a7e7}❯  %f'
 
 HISTSIZE=3000
 SAVEHIST=3000
