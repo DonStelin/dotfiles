@@ -26,13 +26,18 @@ zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
 alias cnvim='nvim --clean'
-alias grep="grep --color=auto"
-alias tms='tmux-sessionizer'
-alias mv='mv -i'
+alias cp='cp --recursive --verbose --progress'
+alias grep='grep --color=auto'
 alias ls='ls -laFh --color=auto'
+alias mv='mv --interactive --verbose'
+alias rm='rm --recursive --verbose'
+alias tms='tmux-sessionizer'
 
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%K{#414868}%F{#c0caf5} %~ %f%k %F{#c0caf5}❯ %f"
+# PROMPT="${NEWLINE}%K{#414868}%F{#c0caf5} %~ %f%k %F{#c0caf5}❯ %f"
+# PROMPT="${NEWLINE}%K{#332b46}%F{#d4c2f0} %~ %f%k %F{#b394d6}❯ %f"
+PROMPT="${NEWLINE}%K{#18151e}%F{#c4a7e7} %~ %f%k %F{#c4a7e7}❯ %f"
+# PROMPT="${NEWLINE}%K{#a78bca}%F{#18151e} %~ %f%k %F{#a78bca}❯ %f"
 
 HISTSIZE=3000
 SAVEHIST=3000
@@ -49,3 +54,4 @@ setopt auto_param_slash
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
