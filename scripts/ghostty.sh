@@ -14,6 +14,6 @@ install_ghostty
 
 rm -rf "$ghostty_path"
 mkdir -p "$XDG_CONFIG_HOME"
-ln -s "$ghostty_config" "$ghostty_path"
+ln -sfn "$ghostty_config" "$ghostty_path"
 
 echo "Ghostty configuration linked successfully"

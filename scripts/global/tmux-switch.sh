@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 selected=$(tmux list-sessions -F "#{session_name}" | fzf)
-[ -z $selected ] && exit
+[ -z "$selected" ] && exit 0
 
-tmux switch -t "$selected"
+tmux switch-client -t "$selected"

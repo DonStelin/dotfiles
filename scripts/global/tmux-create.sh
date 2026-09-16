@@ -1,20 +1,30 @@
 #!/usr/bin/env bash
-target=$(
-    {
+if [ -z "${1:-}" ]; then
+  echo "uso: $(basename "$0") <nombre-sesion>" >&2
+  exit 1
+fi
 
-        find "$HOME/Environment"  -mindepth 0 -maxdepth 1 -type d -print
-        find "$HOME/College"  -mindepth 0 -maxdepth 1 -type d -print
-        find "$HOME/Dev"      -mindepth 0 -maxdepth 1 -type d -print
-        find "$HOME/Notes"    -mindepth 0 -maxdepth 1 -type d -print
-    } | fzf --height=90% --border=rounded --margin=15%,20%
+target=$(
+  {
+
+    find "$HOME/Environment" -mindepth 0 -maxdepth 1 -type d -print
+    find "$HOME/College" -mindepth 0 -maxdepth 1 -type d -print
+    find "$HOME/Dev" -mindepth 0 -maxdepth 1 -type d -print
+    find "$HOME/Notes" -mindepth 0 -maxdepth 1 -type d -print
+  } | fzf --height=90% --border=rounded --margin=15%,20%
 )
 
+if [ -z "${target:-}" ]; then
+  echo "cancelado: no se seleccionó destino" >&2
+  exit 0
+fi
+
 path="$target/$1"
-mkdir "$path"
+mkdir -p "$path"
 
 if [ -n "$TMUX" ]; then
-    tmux new-session -d -s "$1" -c "$path"
-    tmux switch-client -t "$1"
+  tmux new-session -d -s "$1" -c "$path"
+  tmux switch-client -t "$1"
 else
-    tmux new-session -s "$1" -c "$path"
+  tmux new-session -s "$1" -c "$path"
 fi

@@ -50,7 +50,7 @@ install_fzf
 install_ripgrep
 
 echo "Linking yazi configuration..."
-ln -s "$REPO_DIR/env/.config/yazi" "$yazi_path"
+ln -sfn "$REPO_DIR/env/.config/yazi" "$yazi_path"
 echo "Yazi configuration linked"
 
 echo -e "\n...Installing yazi..."
@@ -65,3 +65,4 @@ install_rustup
 install_go
 install_typst
 install_fd
+install_bat

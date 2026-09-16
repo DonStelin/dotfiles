@@ -5,5 +5,5 @@ keepass_path="$XDG_CONFIG_HOME/keepassxc"
 
 rm -rf "$keepass_path"
 echo "Linking Keepass configuration..."
-ln -s "$REPO_DIR/env/.config/keepassxc" "$keepass_path"
+ln -sfn "$REPO_DIR/env/.config/keepassxc" "$keepass_path"
 echo "Keepass config linked :)"

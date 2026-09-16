@@ -12,5 +12,5 @@ install_neovim
 
 rm -rf "$nvim_path"
 echo "Linking neovim configuration..."
-ln -s "$REPO_DIR/env/.config/nvim" "$nvim_path"
+ln -sfn "$REPO_DIR/env/.config/nvim" "$nvim_path"
 echo "Neovim installed successfully"

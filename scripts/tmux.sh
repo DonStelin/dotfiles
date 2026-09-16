@@ -16,17 +16,21 @@ install_tmux
 
 echo "Setting up tmux configuration..."
 rm -rf "$tmux_path"
-mkdir "$tmux_path"
-rm -rf $HOME/.config/tmux/tmux.conf
-rm -rf $HOME/.config/tmux/tmux-nerd-font-window-name.yml
+mkdir -p "$tmux_path"
+rm -f "$tmux_path/tmux.conf"
+rm -f "$tmux_path/tmux-nerd-font-window-name.yml"
 
 echo "Linking tmux configuration files..."
-ln -s "$tmux_config/tmux-nerd-font-window-name.yml" "$tmux_path/tmux-nerd-font-window-name.yml"
-ln -s "$tmux_config/tmux.conf" "$tmux_path/tmux.conf"
+ln -sfn "$tmux_config/tmux-nerd-font-window-name.yml" "$tmux_path/tmux-nerd-font-window-name.yml"
+ln -sfn "$tmux_config/tmux.conf" "$tmux_path/tmux.conf"
 
 echo "Installing tmux plugin manager (tpm)..."
-rm -rf "$tpm_path"
-git clone https://github.com/tmux-plugins/tpm "$tpm_path"
+if [ -d "$tpm_path/.git" ]; then
+  git -C "$tpm_path" pull --ff-only
+else
+  rm -rf "$tpm_path"
+  git clone https://github.com/tmux-plugins/tpm "$tpm_path"
+fi
 
 echo "Installing tmux plugins..."
 "$tpm_path/bin/install_plugins"
