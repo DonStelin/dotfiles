@@ -5,15 +5,8 @@ REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
 ghostty_path="$XDG_CONFIG_HOME/ghostty"
 ghostty_config="$REPO_DIR/env/.config/ghostty"
 
-source "$REPO_DIR/scripts/lib/pkg.sh"
-
 install_ghostty() {
-  if is_fedora; then
-    sudo dnf copr enable -y scottames/ghostty
-    sudo dnf install -y ghostty
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed ghostty
-  fi
+  sudo dnf install -y ghostty
 }
 
 echo -e "\n...Installing ghostty..."

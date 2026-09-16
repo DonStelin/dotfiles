@@ -3,101 +3,46 @@ XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
 yazi_path="$XDG_CONFIG_HOME/yazi"
 
-source "$REPO_DIR/scripts/lib/pkg.sh"
-
 install_yazi() {
-  if is_fedora; then
-    sudo dnf copr enable --assumeyes lihaohong/yazi
-    sudo dnf install -y yazi
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed yazi
-  fi
-}
-
-install_opencode() {
-  if is_fedora; then
-    curl -fsSL https://opencode.ai/install | bash
-  elif is_arch; then
-    paru -S opencode
-  fi
+  sudo dnf copr enable --assumeyes lihaohong/yazi
+  sudo dnf install -y yazi
 }
 
 install_lazygit() {
-  if is_fedora; then
-    sudo dnf copr enable --assumeyes dejan/lazygit
-    sudo dnf install -y lazygit
-  elif is_arch; then
-    sudo pacman -S lazygit
-  fi
+  sudo dnf copr enable --assumeyes dejan/lazygit
+  sudo dnf install -y lazygit
 }
 
 install_ripgrep() {
-  if is_fedora; then
-    sudo dnf install -y ripgrep
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed ripgrep
-  fi
+  sudo dnf install -y ripgrep
 }
 
 install_fzf() {
-  if is_fedora; then
-    sudo dnf install -y fzf
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed fzf
-  fi
+  sudo dnf install -y fzf
 }
 
 install_bat() {
-  if is_fedora; then
-    sudo dnf install -y bat
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed bat
-  fi
+  sudo dnf install -y bat
 }
 
 install_go() {
-  if is_fedora; then
-    sudo dnf install -y golang
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed go
-  fi
+  sudo dnf install -y golang
 }
 
 install_typst() {
-  if command -v cargo &>/dev/null; then
-    cargo install --locked typst-cli
-  else
-    echo "Error: cargo is not installed. Please install rustup first."
-    return 1
-  fi
-}
-
-install_nvm() {
-  if is_fedora; then
-    # TODO: Logica fedora
-    :
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed nvm
-  fi
+  sudo dnf install -y typst
 }
 
 install_rustup() {
-  if is_fedora; then
-    sudo dnf install -y rustup
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed rustup
-  fi
+  sudo dnf install -y rustup
 }
 
 install_fd() {
-  if is_fedora; then
-    sudo dnf install -y fd-find
-  elif is_arch; then
-  fi
+  sudo dnf install -y fd-find
 }
 
 echo -e "\n...Setting up directories..."
-mkdir -p "$HOME/College" "$HOME/Dev" "$HOME/Notes" "$HOME/Environment"
+mkdir -p "$HOME"/{College,Dev,Environment,Cloud}
 echo "Directories created successfully"
 
 echo "...::Installing terminal and dev tools::..."
@@ -119,7 +64,4 @@ install_lazygit
 install_rustup
 install_go
 install_typst
-install_nvm
 install_fd
-install_opencode
-

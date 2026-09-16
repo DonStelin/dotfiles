@@ -5,15 +5,6 @@ echo -e "\nInstallation starting..."
 echo -e "\nInstalling git"
 release_file="/etc/os-release"
 
-if grep -q "Cachy" "$release_file" || grep -q "Arch" "$release_file"; then
-  sudo pacman -Syu --noconfirm --needed git paru
-fi
-
-if grep -q "Debian" "$release_file" || grep -q "Ubuntu" "$release_file"; then
-  sudo apt update
-  sudo apt install -y git
-fi
-
 if grep -q "Fedora" "$release_file" || grep -q "Nobara" "$release_file"; then
   sudo dnf update
   sudo dnf install -y git

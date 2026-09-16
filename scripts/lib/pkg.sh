@@ -9,6 +9,6 @@ is_fedora() {
   [[ "$(detect_distro)" =~ ^(fedora|nobara)$ ]]
 }
 
-is_arch() {
-  [[ "$(detect_distro)" =~ ^(arch|cachyos)$ ]]
+is_debian() {
+  [[ "$(detect_distro)" =~ ^(debian|ubuntu)$ ]]
 }

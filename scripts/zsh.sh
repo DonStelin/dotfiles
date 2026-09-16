@@ -2,14 +2,9 @@
 
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 REPO_DIR="${REPO_DIR:-$HOME/Dotfiles}"
-source "$REPO_DIR/scripts/lib/pkg.sh"
 
 install_zsh() {
-  if is_fedora; then
-    sudo dnf install -y zsh
-  elif is_arch; then
-    sudo pacman -S --noconfirm --needed zsh
-  fi
+  sudo dnf install -y zsh
 }
 
 echo -e "\n...Installing zsh..."
