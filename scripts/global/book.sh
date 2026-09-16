@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-books_dir="$HOME/Documents/Books"
+books_dir="$HOME/Cloud/ebooks/"
 
 if [[ $# -eq 1 ]]; then
   selected=$1
