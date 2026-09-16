@@ -7,18 +7,18 @@ install_zsh() {
   sudo dnf install -y zsh
 }
 
-echo -e "\n...Installing zsh..."
+echo "Installing zsh..."
 install_zsh
 
 rm -f "$HOME/.zshrc"
 rm -f "$HOME/.zshenv"
 rm -rf "$XDG_CONFIG_HOME/zsh"
 
-echo "Linking zshenv..."
+echo "Installing zshenv..."
 ln -sfn "$REPO_DIR/env/.zshenv" "$HOME/.zshenv"
 
 mkdir -p "$XDG_CONFIG_HOME"
-echo "Linking zsh configuration directory..."
+echo "Installing zsh configuration..."
 ln -sfn "$REPO_DIR/env/.config/zsh" "$XDG_CONFIG_HOME/zsh"
 
 chsh -s "$(which zsh)"

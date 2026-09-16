@@ -11,20 +11,19 @@ install_tmux() {
   sudo dnf install -y tmux yq
 }
 
-echo -e "\n...Installing tmux..."
+echo "Installing tmux..."
 install_tmux
 
-echo "Setting up tmux configuration..."
+echo "Installing tmux configuration..."
 rm -rf "$tmux_path"
 mkdir -p "$tmux_path"
 rm -f "$tmux_path/tmux.conf"
 rm -f "$tmux_path/tmux-nerd-font-window-name.yml"
 
-echo "Linking tmux configuration files..."
 ln -sfn "$tmux_config/tmux-nerd-font-window-name.yml" "$tmux_path/tmux-nerd-font-window-name.yml"
 ln -sfn "$tmux_config/tmux.conf" "$tmux_path/tmux.conf"
 
-echo "Installing tmux plugin manager (tpm)..."
+echo "Installing tmux plugin manager..."
 if [ -d "$tpm_path/.git" ]; then
   git -C "$tpm_path" pull --ff-only
 else

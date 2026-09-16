@@ -3,7 +3,7 @@
 dest="$HOME/.local/share/fonts"
 tmp="/tmp/paper-mono"
 
-echo -e "\n...Installing fonts..."
+echo "Installing fonts..."
 
 echo "Installing Geist Mono..."
 sudo dnf install -y vercel-geist-mono-fonts

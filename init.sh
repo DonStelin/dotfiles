@@ -1,19 +1,16 @@
 #!/usr/bin/env bash
 export REPO_DIR="$HOME/Dotfiles"
 
-echo -e "\nInstallation starting..."
-echo -e "\nInstalling git"
-release_file="/etc/os-release"
+echo "Installing dotfiles..."
+echo "Installing git..."
 
-if grep -q "Fedora" "$release_file" || grep -q "Nobara" "$release_file"; then
-  sudo dnf update
-  sudo dnf install -y git
-fi
+sudo dnf update -y
+sudo dnf install -y git
 
 if [ -d "$REPO_DIR" ]; then
   echo "The directory already exists"
 else
-  echo -e "\nCloning repo"
+  echo "Cloning dotfiles repository..."
   git clone "https://github.com/DonStelin/dotfiles.git" "$REPO_DIR"
 
 fi

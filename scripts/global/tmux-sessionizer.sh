@@ -9,7 +9,6 @@ else
       find "$HOME/College" -mindepth 1 -maxdepth 1 -type d -print
       find "$HOME/Dev" -mindepth 1 -maxdepth 2 -type d -print
       find "$HOME/Dotfiles" -mindepth 0 -maxdepth 0 -type d -print
-      find "$HOME/Notes" -mindepth 1 -maxdepth 1 -type d -print
       find "$HOME/Documents" -mindepth 1 -maxdepth 1 -type d -print
       find "$HOME/Cloud" -mindepth 0 -maxdepth 0 -type d -print
     } | fzf --height=90% --border=rounded --margin=15%,20%

@@ -9,11 +9,11 @@ install_ghostty() {
   sudo dnf install -y ghostty
 }
 
-echo -e "\n...Installing ghostty..."
+echo "Installing ghostty..."
 install_ghostty
 
 rm -rf "$ghostty_path"
 mkdir -p "$XDG_CONFIG_HOME"
 ln -sfn "$ghostty_config" "$ghostty_path"
 
-echo "Ghostty configuration linked successfully"
+echo "Ghostty installed successfully"

@@ -7,10 +7,10 @@ install_neovim() {
   sudo dnf install -y neovim
 }
 
-echo -e "\n...Installing neovim..."
+echo "Installing neovim..."
 install_neovim
 
 rm -rf "$nvim_path"
-echo "Linking neovim configuration..."
+echo "Installing neovim configuration..."
 ln -sfn "$REPO_DIR/env/.config/nvim" "$nvim_path"
 echo "Neovim installed successfully"
