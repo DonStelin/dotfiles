@@ -1,24 +1,11 @@
-ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
-if [[ ! -f $ZINIT_HOME/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} plugin manager...%f"
-    command mkdir -p "$(dirname $ZINIT_HOME)"
-    command git clone https://github.com/zdharma-continuum/zinit "$ZINIT_HOME"
-fi
-
-source "$ZINIT_HOME/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-
+plugin_dir="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
+fpath=("$plugin_dir/zsh-completions/src" $fpath)
+source "$plugin_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 autoload -U compinit
 compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zcompdump-$ZSH_VERSION"
-zinit cdreplay -q
+source "$plugin_dir/fzf-tab/fzf-tab.plugin.zsh"
 autoload -U colors && colors
 autoload -Uz edit-command-line
-
-zinit light Aloxaf/fzf-tab
 
 source <(fzf --zsh)
 bindkey -e

@@ -5,10 +5,6 @@ yazi_path="$XDG_CONFIG_HOME/yazi"
 
 echo "Installing terminal and dev tools..."
 
-echo "Installing yazi..."
-sudo dnf copr enable --assumeyes lihaohong/yazi
-sudo dnf install -y yazi
-
 echo "Installing lazygit..."
 sudo dnf copr enable --assumeyes dejan/lazygit
 sudo dnf install -y lazygit
@@ -34,8 +30,15 @@ sudo dnf install -y rustup
 echo "Installing fd..."
 sudo dnf install -y fd-find
 
+echo "Installing yazi..."
+sudo dnf copr enable --assumeyes lihaohong/yazi
+sudo dnf install -y yazi
+
 echo "Installing yazi plugins..."
 ya pkg add dedukun/bookmarks
+
+echo "Installing hyperfine..."
+sudo dnf install hyperfine
 
 echo "Installing yazi configuration..."
 ln -sfn "$REPO_DIR/env/.config/yazi" "$yazi_path"
