@@ -8,6 +8,10 @@ autoload -U colors && colors
 autoload -Uz edit-command-line
 
 source <(fzf --zsh)
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 bindkey -e
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
@@ -18,6 +22,8 @@ alias grep='grep --color=auto'
 alias ls='ls -laFh --color=auto'
 alias mv='mv --interactive --verbose'
 alias rm='rm --recursive --verbose'
+
+alias preview='fzf --preview="bat --color=always {}"'
 alias tms='tmux-sessionizer'
 
 
