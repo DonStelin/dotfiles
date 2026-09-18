@@ -6,12 +6,10 @@ fi
 
 target=$(
   {
-    [[ -d "$HOME/Environment" ]] && printf '%s\n' "$HOME/Environment"
-    fd . "$HOME/Environment" --min-depth 1 --max-depth 1 --type d --absolute-path --hidden 2>/dev/null
-    [[ -d "$HOME/College" ]] && printf '%s\n' "$HOME/College"
-    fd . "$HOME/College" --min-depth 1 --max-depth 1 --type d --absolute-path --hidden 2>/dev/null
-    [[ -d "$HOME/Dev" ]] && printf '%s\n' "$HOME/Dev"
-    fd . "$HOME/Dev" --min-depth 1 --max-depth 1 --type d --absolute-path --hidden 2>/dev/null
+
+    find "$HOME/Environment" -mindepth 0 -maxdepth 1 -type d -print
+    find "$HOME/College" -mindepth 0 -maxdepth 1 -type d -print
+    find "$HOME/Dev" -mindepth 0 -maxdepth 1 -type d -print
   } | fzf --height=90% --border=rounded --margin=15%,20%
 )
 
