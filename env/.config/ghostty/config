@@ -16,4 +16,8 @@ mouse-scroll-multiplier = 0.95
 
 resize-overlay = never
 copy-on-select = clipboard
-shell-integration-features = ssh-env,ssh-terminfo
+shell-integration-features = cursor,title,ssh-env,ssh-terminfo,path
+
+# Saltar entre prompts (requiere la integración de shell en .zshrc)
+keybind = shift+up=jump_to_prompt:-1
+keybind = shift+down=jump_to_prompt:1

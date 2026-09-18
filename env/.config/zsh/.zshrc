@@ -7,6 +7,10 @@ source "$plugin_dir/fzf-tab/fzf-tab.plugin.zsh"
 autoload -U colors && colors
 autoload -Uz edit-command-line
 
+if [[ -n "$GHOSTTY_RESOURCES_DIR" && -r "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration" ]]; then
+  builtin source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
+fi
+
 source <(fzf --zsh)
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'

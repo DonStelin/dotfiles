@@ -27,7 +27,7 @@ tag="$(curl -fsSL -o /dev/null -w '%{url_effective}' "https://github.com/paper-d
 curl -fL -o "$tmp/paper-mono.zip" "https://github.com/paper-design/paper-mono/releases/download/$tag/paper-mono-$tag.zip"
 unzip -o -q "$tmp/paper-mono.zip" -d "$tmp"
 
-find "$tmp" -name "*.ttf" -exec cp -f {} "$dest/" \;
+fd -e ttf --type f . "$tmp" --exec-batch cp -f {} "$dest/"
 
 rm -rf "$tmp"
 fc-cache -f "$dest"

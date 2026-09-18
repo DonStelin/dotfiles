@@ -4,13 +4,14 @@ if [[ $# -eq 1 ]]; then
 else
   selected=$(
     {
-
-      find "$HOME/Environment" -mindepth 0 -maxdepth 1 -type d -print
-      find "$HOME/College" -mindepth 1 -maxdepth 1 -type d -print
-      find "$HOME/Dev" -mindepth 1 -maxdepth 2 -type d -print
-      find "$HOME/Dotfiles" -mindepth 0 -maxdepth 0 -type d -print
-      find "$HOME/Documents" -mindepth 1 -maxdepth 1 -type d -print
-      find "$HOME/Cloud" -mindepth 0 -maxdepth 0 -type d -print
+      # fd no incluye el directorio base, se añade a mano (equivale a mindepth 0)
+      [[ -d "$HOME/Environment" ]] && printf '%s\n' "$HOME/Environment"
+      fd . "$HOME/Environment" --min-depth 1 --max-depth 1 --type d --absolute-path --hidden 2>/dev/null
+      fd . "$HOME/College" --min-depth 1 --max-depth 1 --type d --absolute-path --hidden 2>/dev/null
+      fd . "$HOME/Dev" --min-depth 1 --max-depth 2 --type d --absolute-path --hidden 2>/dev/null
+      [[ -d "$HOME/Dotfiles" ]] && printf '%s\n' "$HOME/Dotfiles"
+      fd . "$HOME/Documents" --min-depth 1 --max-depth 1 --type d --absolute-path --hidden 2>/dev/null
+      [[ -d "$HOME/Cloud" ]] && printf '%s\n' "$HOME/Cloud"
     } | fzf --height=90% --border=rounded --margin=15%,20%
   )
 fi

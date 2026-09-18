@@ -35,7 +35,7 @@ sudo dnf copr enable --assumeyes lihaohong/yazi
 sudo dnf install -y yazi
 
 echo "Installing yazi plugins..."
-ya pkg add dedukun/bookmarks
+ya pkg install
 
 echo "Installing hyperfine..."
 sudo dnf install hyperfine
