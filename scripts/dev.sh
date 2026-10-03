@@ -5,10 +5,6 @@ yazi_path="$XDG_CONFIG_HOME/yazi"
 
 echo "Installing terminal and dev tools..."
 
-echo "Installing lazygit..."
-sudo dnf copr enable --assumeyes dejan/lazygit
-sudo dnf install -y lazygit
-
 echo "Installing ripgrep..."
 sudo dnf install -y ripgrep
 
@@ -26,6 +22,9 @@ sudo dnf install -y typst
 
 echo "Installing rustup..."
 sudo dnf install -y rustup
+
+echo "Installing cargo..."
+rustup-init -y
 
 echo "Installing fd..."
 sudo dnf install -y fd-find

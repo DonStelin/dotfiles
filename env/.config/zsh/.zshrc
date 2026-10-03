@@ -11,12 +11,12 @@ if [[ -n "$GHOSTTY_RESOURCES_DIR" && -r "$GHOSTTY_RESOURCES_DIR/shell-integratio
   builtin source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
 fi
 
+bindkey -e
 source <(fzf --zsh)
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-bindkey -e
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
